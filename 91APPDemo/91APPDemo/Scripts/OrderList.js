@@ -21,7 +21,7 @@ function Confirm() {
     })
 
     Promise.all(promises).then(function (res) {
-        alert('OK');
+        location.reload(); 
     }).catch(function (err) {
         alert('Try Again')
     })
