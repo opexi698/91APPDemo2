@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @model _91APPDemo.ViewModels.Product
+}
+
+<h2>Product</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="orderId">@Model.ProductName</td>
+            <td>@Model.Cost</td>
+        </tr>
+    </tbody>
+</table>

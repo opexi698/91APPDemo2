@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @model IEnumerable<_91APPDemo.ViewModels.NinetyOneAppViewModel>
+}
+
+<script src="~/Scripts/OrderList.js"></script>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Order Id</th>
+            <th scope="col">Order Item</th>
+            <th scope="col">Price</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (_91APPDemo.ViewModels.NinetyOneAppViewModel order in Model)
+        {
+            <tr class="ordercol">
+                <th scope="row">
+                    <input type="checkbox" class="orderNeedChange">
+                </th>
+                <td class="orderId">@order.OrderId</td>
+                <td>
+                    <a href="@Url.Action("Product", "Home", new { id = order.ProductId })">
+                        <div style="height:100%;width:100%">
+                            @order.OrderItem
+                        </div>
+                    </a>
+                </td>
+                <td>@order.Price</td>
+                <td>@order.Cost</td>
+                <td>@order.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<input type="button" value="確定" class="btn btn-primary" id="Confirmbtn" />
